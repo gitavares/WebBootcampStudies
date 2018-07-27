@@ -1,0 +1,23 @@
+td {
+    width: 100px;
+    height: 100px;
+    background-color: greenyellow;
+}
+
+.vertical {
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+.horizontal {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+table {
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+}

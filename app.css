@@ -1,0 +1,24 @@
+h1 {
+    color: red;
+    /* border-color: purple;
+    border-width: 5px;
+    border-style: dashed; */
+
+    border: 8px dashed brown;
+}
+
+li {
+    color: aqua;
+}
+
+h4 {
+    color: purple;
+    background: rgb(255, 100, 80);
+}
+
+body {
+    background-color: pink;
+    /* background: url(https://developer.apple.com/ios/human-interface-guidelines/images/iOSHIG_Hero.svg);
+    background-repeat: no-repeat;
+    background-size: cover;  */
+}
