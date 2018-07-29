@@ -39,3 +39,13 @@ SHOW        /dogs/:id       GET             Show info about one dog
 EDIT        /dogs/:id/edit  GET             Show edit form for one dog
 UPDATE      /dogs/:id       PUT             Update a particular dog, then rediret somewhere
 DESTROY     /dogs/:id       DELETE          Delete a particular dog, then redirect somewhere
+
+
+INDEX       /campgrounds            GET
+NEWS        /campgrounds/new        GET
+CREATE      /campgrounds            POST
+SHOW        /campgrounds/:id        GET
+
+
+NEW         /campgrounds/:id/comments/new       GET
+CREATE      /campgrounds/:id/comments
