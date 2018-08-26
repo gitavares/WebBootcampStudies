@@ -49,3 +49,6 @@ SHOW        /campgrounds/:id        GET
 
 NEW         /campgrounds/:id/comments/new       GET
 CREATE      /campgrounds/:id/comments           POST
+
++ Passport
+> npm install passport passport-local passport-local-mongoose express-session --save
