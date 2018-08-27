@@ -1,5 +1,5 @@
 > npm int
-> npm install --save express ejs request body-parser
+> npm install --save express ejs request body-parser method-override
 
 + MongoDB (Documents/mongodb/bin)
 
