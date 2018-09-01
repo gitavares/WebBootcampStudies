@@ -1,5 +1,5 @@
 > npm int
-> npm install --save express ejs request body-parser method-override
+> npm install --save express ejs request body-parser
 
 + MongoDB (Documents/mongodb/bin)
 
@@ -52,3 +52,13 @@ CREATE      /campgrounds/:id/comments           POST
 
 + Passport
 > npm install passport passport-local passport-local-mongoose express-session --save
+
++ Method override
+> npm install --save method-override
+
++ Connect Flash // The flash is a special area of the session used for storing messages
+> npm install --save connect-flash
+
++ nodemon // to update the server automatically
+> npm install -g nodemon
+> nodemon   // if app.js is the main file on package.json or nodemon app.js
