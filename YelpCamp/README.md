@@ -62,3 +62,6 @@ CREATE      /campgrounds/:id/comments           POST
 + nodemon // to update the server automatically
 > npm install -g nodemon
 > nodemon   // if app.js is the main file on package.json or nodemon app.js
+
++ moment // to put the time that something was posted
+> npm install --save moment
