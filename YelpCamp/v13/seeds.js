@@ -2,7 +2,7 @@ var mongoose = require('mongoose')
 var Campground = require('./models/campground')
 var Comment = require('./models/comment')
 
-var data = [
+var seeds = [
     {
         name: "Cloud's Rest", 
         image: "https://farm4.staticflickr.com/3795/10131087094_c1c0a1c859.jpg",
@@ -20,39 +20,54 @@ var data = [
     }
 ]
 
-function seedDB() {
-    // remove all campgrounds
-    Campground.remove({}, function (err) {
-        if(err){
-            console.log(err)
-        }
-        console.log("remove all campgrounds")
-        
-        // add new campgrounds
-        data.forEach(function (seed) {
-            Campground.create(seed, function (err, campground) {
-                if(err){
-                    console.log(err)
-                } else {
-                    console.log("add a new campground")
-                    console.log(campground)
-                    // add comments
-                    Comment.create({
-                        text: "This place is great, and I should go back again with my friends. You should do the same. I tottaly recommend it.",
-                        author: "Homer"
-                    }, function (err, comment) {
-                        if(err){
-                            console.log(err)
-                        } else {
-                            campground.comments.push(comment)
-                            campground.save()
-                            console.log("created new comment")
-                        }
-                    })
-                }
+async function seedDB() {
+    try {
+        await Comment.remove({})
+        await Campground.remove({})
+        for(const seed of seeds) {
+            let campground = await Campground.create(seed)
+            let comment = await Comment.create({
+                text: "This place is great, and I should go back again with my friends. You should do the same. I tottaly recommend it.",
+                author: "Homer"
             })
-        })
-    })
+            campground.comments.push(comment)
+            campground.save()
+        }
+    } catch(err){
+        console.log(err)
+    }
+    // // remove all campgrounds
+    // Campground.remove({}, function (err) {
+    //     if(err){
+    //         console.log(err)
+    //     }
+    //     console.log("remove all campgrounds")
+        
+    //     // add new campgrounds
+    //     data.forEach(function (seed) {
+    //         Campground.create(seed, function (err, campground) {
+    //             if(err){
+    //                 console.log(err)
+    //             } else {
+    //                 console.log("add a new campground")
+    //                 console.log(campground)
+    //                 // add comments
+    //                 Comment.create({
+    //                     text: "This place is great, and I should go back again with my friends. You should do the same. I tottaly recommend it.",
+    //                     author: "Homer"
+    //                 }, function (err, comment) {
+    //                     if(err){
+    //                         console.log(err)
+    //                     } else {
+    //                         campground.comments.push(comment)
+    //                         campground.save()
+    //                         console.log("created new comment")
+    //                     }
+    //                 })
+    //             }
+    //         })
+    //     })
+    // })
 
 }
 

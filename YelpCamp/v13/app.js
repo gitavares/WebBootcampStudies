@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 var express         = require('express'),
     app             = express(),
     bodyParser      = require('body-parser'),
@@ -49,6 +51,6 @@ app.use("/", indexRoutes)
 app.use("/campgrounds", campgroundRoutes)
 app.use("/campgrounds/:id/comments", commentRoutes)
 
-app.listen(3000, "localhost", function (req, res) {
+app.listen(process.env.PORT, process.env.HOST_NAME, function (req, res) {
     console.log("server started")
 })
