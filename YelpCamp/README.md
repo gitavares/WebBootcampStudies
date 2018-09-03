@@ -30,25 +30,25 @@
 
 
 // RESTful Routes (a pattern to define a route)
-name        url             HTTP verb       description
+>name        url             HTTP verb       description
 ====================================================================================
-INDEX       /dogs           GET             Display a list of all dogs
-NEW         /dogs/new       GET             Form to make a new dog
-CREATE      /dogs           POST            Add new dog to DB
-SHOW        /dogs/:id       GET             Show info about one dog
-EDIT        /dogs/:id/edit  GET             Show edit form for one dog
-UPDATE      /dogs/:id       PUT             Update a particular dog, then rediret somewhere
-DESTROY     /dogs/:id       DELETE          Delete a particular dog, then redirect somewhere
+>INDEX       /dogs           GET             Display a list of all dogs
+>NEW         /dogs/new       GET             Form to make a new dog
+>CREATE      /dogs           POST            Add new dog to DB
+>SHOW        /dogs/:id       GET             Show info about one dog
+>EDIT        /dogs/:id/edit  GET             Show edit form for one dog
+>UPDATE      /dogs/:id       PUT             Update a particular dog, then rediret somewhere
+>DESTROY     /dogs/:id       DELETE          Delete a particular dog, then redirect somewhere
 
 
-INDEX       /campgrounds            GET
-NEW         /campgrounds/new        GET
-CREATE      /campgrounds            POST
-SHOW        /campgrounds/:id        GET
+>INDEX       /campgrounds            GET
+>NEW         /campgrounds/new        GET
+>CREATE      /campgrounds            POST
+>SHOW        /campgrounds/:id        GET
 
 
-NEW         /campgrounds/:id/comments/new       GET
-CREATE      /campgrounds/:id/comments           POST
+>NEW         /campgrounds/:id/comments/new       GET
+>CREATE      /campgrounds/:id/comments           POST
 
 + Passport
 > npm install passport passport-local passport-local-mongoose express-session --save
@@ -69,17 +69,17 @@ CREATE      /campgrounds/:id/comments           POST
 + Locus for debuguing package for node. Example: eval(require('locus')) in the line that you want debugguing. It will freeze the code where we put this line code
 > npm install locus
 // in the terminal, we can write: req.body, req.query, for example to see any results.
-// ʆ: req.body
-req.body
-{}
+> ʆ: req.body
+>req.body
+>{}
 
-// ʆ: req.query
-req.query
-{ search: 'galaxy' }
+> ʆ: req.query
+>req.query
+>{ search: 'galaxy' }
 
-// ʆ: req.query.search
-req.query.search
-'galaxy'
+> ʆ: req.query.search
+>req.query.search
+>'galaxy'
 
 + images upload // https://cloudinary.com
 > npm install --save multer cloudinary
