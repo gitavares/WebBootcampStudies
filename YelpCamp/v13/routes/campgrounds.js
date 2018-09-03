@@ -5,14 +5,26 @@ var middleware = require("../middleware")
 
 // INDEX ROUTE -- display all campgrounds
 router.get("/", function (req, res) {
-    // get all campgrounds from DB (mongoDB)
-    Campground.find({}, function (err, allCampgrounds) {
-        if(err){
-            console.log(err)
-        } else {
-            res.render("campgrounds/index", { campgrounds: allCampgrounds, page: 'campgrounds' })
-        }
-    })
+    // eval(require('locus'))
+    if(req.query.search){
+        const regex = new RegExp(escapeRegex(req.query.search), 'gi') //g = global and i = ignore cases
+        Campground.find({name: regex}, function (err, allCampgrounds) {
+            if(err){
+                console.log(err)
+            } else {
+                res.render("campgrounds/index", { campgrounds: allCampgrounds, page: 'campgrounds' })
+            }
+        })
+    } else {
+        // get all campgrounds from DB (mongoDB)
+        Campground.find({}, function (err, allCampgrounds) {
+            if(err){
+                console.log(err)
+            } else {
+                res.render("campgrounds/index", { campgrounds: allCampgrounds, page: 'campgrounds' })
+            }
+        })
+    }
 })
 
 // CREATE -- add a new campground
@@ -86,5 +98,9 @@ router.delete("/:id", middleware.checkCampgroundOwnership, function (req, res) {
         res.redirect("/campgrounds")
     })
 })
+
+function escapeRegex(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&")
+}
 
 module.exports = router

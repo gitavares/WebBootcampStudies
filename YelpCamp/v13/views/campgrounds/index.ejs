@@ -7,6 +7,16 @@
         <p>
             <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add new Campground</a>
         </p>
+        <p>
+            <form action="/campgrounds" method="GET" class="form-inline">
+                <div class="form-group">
+                    <input type="text" name="search" placeholder="Campground search..." class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Search" class="btn btn-default">
+                </div>
+            </form>
+        </p>
     </div>
 </header>
 

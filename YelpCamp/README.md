@@ -65,3 +65,18 @@ CREATE      /campgrounds/:id/comments           POST
 
 + moment // to put the time that something was posted
 > npm install --save moment
+
++ Locus for debuguing package for node. Example: eval(require('locus')) in the line that you want debugguing. It will freeze the code where we put this line code
+> npm install locus
+// in the terminal, we can write: req.body, req.query, for example to see any results.
+// ʆ: req.body
+req.body
+{}
+
+// ʆ: req.query
+req.query
+{ search: 'galaxy' }
+
+// ʆ: req.query.search
+req.query.search
+'galaxy'
